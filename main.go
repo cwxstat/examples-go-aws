@@ -6,7 +6,10 @@ import (
 )
 
 func main() {
-	result, err := dynamo.Get("mmcPKSK", "My Data", "Something")
+	d := dynamo.NewDynamo("mmcPKSK")
+
+	d.Put("pk0", "skey", "good", dynamo.Doc("location", "aws"))
+	result, err := d.Get("My Data", "Something")
 	if err != nil {
 		fmt.Println(err)
 	}
