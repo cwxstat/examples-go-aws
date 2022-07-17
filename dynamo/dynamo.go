@@ -71,7 +71,7 @@ func (d *Dynamo) Put(pkey, skey, status string, doc *db.Doc) error {
 	if err != nil {
 		return err
 	}
-	_,err = db.Put(d.cfg, "mmcPKSK", av)
+	_, err = db.Put(d.cfg, "mmcPKSK", av)
 	if err != nil {
 		return err
 	}
