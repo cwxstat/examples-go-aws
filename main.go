@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 )
 
-func PullData(table string, pkey, skey string) (*db.PKSK, error) {
+func Get(table string, pkey, skey string) (*db.PKSK, error) {
 
 	type KEY struct {
 		PK string `json:"PK"`
@@ -40,7 +40,7 @@ func PullData(table string, pkey, skey string) (*db.PKSK, error) {
 }
 
 func main() {
-	result, err := PullData("mmcPKSK", "My Data", "Something")
+	result, err := Get("mmcPKSK", "My Data", "Something")
 	if err != nil {
 		fmt.Println(err)
 	}
